@@ -1,1 +1,75 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jonathan Bek</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <nav className="navbar navbar-expand-lg sticky-top d-print navbar-dark bg-dark" id="navbar">
+                <a className="navbar-brand" href="#"><img src="#" width="40" height="40" className="mr-3" alt=""/>Jonathan</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav pull-right">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Search by Name
+                            </a>
+                            <div class="dropdown-menu py-0" aria-labelledby="navbarDropdownMenuLink">
+                                <div className="card">
+                                    <div className="card-body bg-light px-3">
+                                        <form method="get" action="/items/search">
+                                            <input className="form-control" type="search" name="search" placeholder="Search"/>
+                                            <button className="btn btn-primary mt-2" type="submit">Search</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Create Item
+                            </a>
+                            <div class="dropdown-menu py-0" aria-labelledby="navbarDropdownMenuLink">
+                                <div className="card">
+                                    <div className="card-body bg-light px-3">
+                                        <form method="POST" action="/items/new">
+                                            <input type="text" className="card-input form-control" name="name" placeholder="Input name of item"/>
+                                            <input type="text" className="card-input form-control" name="amount" placeholder="Input amount in dollars, eg. 1.23"/>
+                                            <input type="text" className="card-input form-control" name="creditor" placeholder="Input name of creditor"/>
+                                            <div className="checkbox">
+                                              <label>
+                                                <input type="checkbox" name="recurring" data-toggle="toggle"/>
+                                                <span className="font-weight-light">Check this box for monthly payments</span>
+                                              </label>
+                                            </div>
+                                            <label className="font-weight-light ml-2" htmlFor="due_date-input">Due Date:</label>
+                                            <input type="date" className="card-input form-control" name="due_date" defaultValue={currentDate}/>
+                                            <button className="btn btn-primary my-2" type="submit">Create</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+
+
+            </nav>
+
+    <div class="wrapper row">
+        <div class="leftCol col-6">
+
+        </div>
+
+        <div class="rightCol col-6">
+
+        </div>
+    </div>
+</body>
+</html>
