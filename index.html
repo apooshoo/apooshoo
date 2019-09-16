@@ -8,8 +8,8 @@
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
-    <nav className="navbar navbar-expand-lg sticky-top d-print navbar-dark bg-dark" id="navbar">
-                <a className="navbar-brand" href="#"><img src="#" width="40" height="40" className="mr-3" alt=""/>Jonathan</a>
+    <nav class="navbar navbar-expand-lg sticky-top d-print navbar-dark bg-dark" id="navbar">
+                <a class="navbar-brand" href="#"><img src="#" width="40" height="40" class="mr-3" alt=""/>Jonathan</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -20,11 +20,11 @@
                               Sort I
                             </a>
                             <div class="dropdown-menu py-0" aria-labelledby="navbarDropdownMenuLink">
-                              <div className="card">
-                                <div className="card-body bg-light px-3">
+                              <div class="card">
+                                <div class="card-body bg-light px-3">
                                     <form method="GET" action="/items/sort">
-                                        <div className="form-group">
-                                            <select className="form-control" name="parameter" id="sort-parameter">
+                                        <div class="form-group">
+                                            <select class="form-control" name="parameter" id="sort-parameter">
                                                 <option selected disabled>Sort by</option>
                                                 <option value="name">Item Name</option>
                                                 <option value="amount">Amount</option>
@@ -34,12 +34,12 @@
                                                 <option value="created_at">Date Created</option>
                                                 <option value="updated_at">Date Updated</option>
                                             </select>
-                                            <select className="form-control" name="order" id="sort-order">
+                                            <select class="form-control" name="order" id="sort-order">
                                                 <option selected disabled>Order by</option>
                                                 <option value="DESC">Descending</option>
                                                 <option value="ASC">Ascending</option>
                                             </select>
-                                            <button className="btn btn-primary mt-2" type="submit">Sort</button>
+                                            <button class="btn btn-primary mt-2" type="submit">Sort</button>
                                         </div>
                                     </form>
                                 </div>
@@ -51,11 +51,11 @@
                               Search by Name
                             </a>
                             <div class="dropdown-menu py-0" aria-labelledby="navbarDropdownMenuLink">
-                                <div className="card">
-                                    <div className="card-body bg-light px-3">
+                                <div class="card">
+                                    <div class="card-body bg-light px-3">
                                         <form method="get" action="/items/search">
-                                            <input className="form-control" type="search" name="search" placeholder="Search"/>
-                                            <button className="btn btn-primary mt-2" type="submit">Search</button>
+                                            <input class="form-control" type="search" name="search" placeholder="Search"/>
+                                            <button class="btn btn-primary mt-2" type="submit">Search</button>
                                         </form>
                                     </div>
                                 </div>
@@ -66,21 +66,21 @@
                               Create Item
                             </a>
                             <div class="dropdown-menu py-0" aria-labelledby="navbarDropdownMenuLink">
-                                <div className="card">
-                                    <div className="card-body bg-light px-3">
+                                <div class="card">
+                                    <div class="card-body bg-light px-3">
                                         <form method="POST" action="/items/new">
-                                            <input type="text" className="card-input form-control" name="name" placeholder="Input name of item"/>
-                                            <input type="text" className="card-input form-control" name="amount" placeholder="Input amount in dollars, eg. 1.23"/>
-                                            <input type="text" className="card-input form-control" name="creditor" placeholder="Input name of creditor"/>
-                                            <div className="checkbox">
+                                            <input type="text" class="card-input form-control" name="name" placeholder="Input name of item"/>
+                                            <input type="text" class="card-input form-control" name="amount" placeholder="Input amount in dollars, eg. 1.23"/>
+                                            <input type="text" class="card-input form-control" name="creditor" placeholder="Input name of creditor"/>
+                                            <div class="checkbox">
                                               <label>
                                                 <input type="checkbox" name="recurring" data-toggle="toggle"/>
-                                                <span className="font-weight-light">Check this box for monthly payments</span>
+                                                <span class="font-weight-light">Check this box for monthly payments</span>
                                               </label>
                                             </div>
-                                            <label className="font-weight-light ml-2" htmlFor="due_date-input">Due Date:</label>
-                                            <input type="date" className="card-input form-control" name="due_date" defaultValue={currentDate}/>
-                                            <button className="btn btn-primary my-2" type="submit">Create</button>
+                                            <label class="font-weight-light ml-2" htmlFor="due_date-input">Due Date:</label>
+                                            <input type="date" class="card-input form-control" name="due_date" defaultValue={currentDate}/>
+                                            <button class="btn btn-primary my-2" type="submit">Create</button>
                                         </form>
                                     </div>
                                 </div>
