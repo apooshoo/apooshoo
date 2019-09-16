@@ -2,7 +2,9 @@
 <html>
 <head>
     <title>Jonathan Bek</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
@@ -13,6 +15,37 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav pull-right">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Sort I
+                            </a>
+                            <div class="dropdown-menu py-0" aria-labelledby="navbarDropdownMenuLink">
+                              <div className="card">
+                                <div className="card-body bg-light px-3">
+                                    <form method="GET" action="/items/sort">
+                                        <div className="form-group">
+                                            <select className="form-control" name="parameter" id="sort-parameter">
+                                                <option selected disabled>Sort by</option>
+                                                <option value="name">Item Name</option>
+                                                <option value="amount">Amount</option>
+                                                <option value="creditor">Creditor</option>
+                                                <option value="recurring">Recurring</option>
+                                                <option value="due_date">Due Date</option>
+                                                <option value="created_at">Date Created</option>
+                                                <option value="updated_at">Date Updated</option>
+                                            </select>
+                                            <select className="form-control" name="order" id="sort-order">
+                                                <option selected disabled>Order by</option>
+                                                <option value="DESC">Descending</option>
+                                                <option value="ASC">Ascending</option>
+                                            </select>
+                                            <button className="btn btn-primary mt-2" type="submit">Sort</button>
+                                        </div>
+                                    </form>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               Search by Name
