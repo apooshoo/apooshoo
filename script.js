@@ -25,6 +25,13 @@ let appLinks = [
     "https://hairaffair.herokuapp.com",
     "https://apooshoo.github.io/whackakanji/"
   ];
+
+let technologies = [
+    "Reactjs, Node/Express, PostgreSQL, Javascript, CSS Animations",
+    "Javascript, Jquery",
+    "Ruby on Rails, Bootstrap, PostgreSQL, Javascript",
+    "HTML, CSS, Javascript"
+  ];
 let createItem = (appNum) => {
     let div = $("<div class='item-container'/>").css({"width": "100%", "height": "100%", "position": "relative", "margin": "10px 0"});
     let imgDiv = $("<div class='img-container'/>").css({"width": "80%", "height": "60%", "margin": "0 auto", "cursor": "pointer"});
@@ -51,9 +58,14 @@ let createItem = (appNum) => {
     let githubLinkText = $('<p>Github Link</p>').css({"margin": "auto 10px"});
     linksDiv.append([githubLink, githubLinkText]);
 
+    let techDiv = $("<div class='tech-container'/>").css({"width": "80%", "height": "30%", "margin": "10px auto", "display": "flex", "justify-content": "center"});
+    let techs = $(`<p>${technologies[appNum]}</p>`).css({"margin": "auto 10px"});
+    techDiv.append(techs);
+
     div.append(arrowDiv)
     div.append(textDiv);
     div.append(linksDiv);
+    div.append(techDiv);
 
     rightCol.append(div);
     rightCol.append($('<hr>'));
