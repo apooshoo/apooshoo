@@ -9,9 +9,9 @@ let screens = [
     ];
 let descriptions = [
     'A React rhythm game featuring characters and music from the JRPG mobile game Granblue Fantasy.',
-    'A Google Chrome extension that automatically syncs your anime downloads with your MyAnimeList watchlist.',
+    'A Google Chrome extension that automatically syncs your anime downloads from HorribleSubs with your MyAnimeList watchlist.',
     'A hair-salon discovery and reviewing app to help you make an informed choice on your next haircut.',
-    'My first app - a whack-a-mole learning guide where you filter through Japanese kanji characters to find the right one.'
+    'My first app - a whack-a-mole Japanese kanji learning aid where you try to click the correct character.'
   ];
 let githubLinks = [
     'https://github.com/apooshoo/fake-granblue-fantasy',
@@ -28,7 +28,7 @@ let appLinks = [
 let createItem = (appNum) => {
     let div = $("<div class='item-container'/>").css({"width": "100%", "height": "100%", "position": "relative", "margin": "10px 0"});
     let imgDiv = $("<div class='img-container'/>").css({"width": "80%", "height": "60%", "margin": "0 auto", "cursor": "pointer"});
-    imgDiv.click(()=>{window.location = `${appLinks[appNum]}`})
+    imgDiv.click(()=>{window.location = `${appLinks[appNum]}`});
     let img = $(`<img src='./screens/${screens[appNum]}'/>`).css({"max-width": "100%", "max-height": "100%"});
 
     imgDiv.append(img);
@@ -56,10 +56,10 @@ let createItem = (appNum) => {
     div.append(linksDiv);
 
     rightCol.append(div);
-    rightCol.append($('<hr>'))
+    rightCol.append($('<hr>'));
 
 }
 
 screens.map((app, index)=>{
-    createItem(index)
-})
+    createItem(index);
+});
