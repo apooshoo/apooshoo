@@ -10,6 +10,8 @@ hr{
 	height: 10vh;
 }
 .wrapper{
+	/*background-image: url("https://cdn.lifehack.org/wp-content/uploads/2013/04/54-1024x576.jpg");*/
+	/*background-size: cover;*/
 	height: 100%;
 	width: 100%;
 	padding: 0px;
@@ -27,11 +29,17 @@ hr{
 }
 
 .leftCol{
+	background-color: rgb(207,229,227);
 	height: 90vh;
 	overflow-y: auto;
 }
 
 .rightCol{
+	font-size: 14px;
 	height: 90vh;
 	overflow-y: auto;
+}
+
+.rightCol hr{
+	width: 80%;
 }

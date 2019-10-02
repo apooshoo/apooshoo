@@ -1,6 +1,13 @@
 console.log('YO????//');
 let rightCol = $('.rightCol-wrapper');
 
+let titles = [
+    'Fake Granblue Fantasy',
+    'AnimeSync',
+    'The Hair Affair',
+    'Whack-a-Kanji'
+  ];
+
 let screens = [
     'fgbf-screen.png',
     'as-screen.png',
@@ -34,12 +41,15 @@ let technologies = [
   ];
 let createItem = (appNum) => {
     let div = $("<div class='item-container'/>").css({"width": "100%", "height": "100%", "position": "relative", "margin": "10px 0"});
+
+    let titleDiv = $("<div class='arrow-container'/>").css({"width": "80%", "height": "30%", "margin": "5px auto", "display": "flex", "justify-content": "center"});
+    let title = $(`<h3>${titles[appNum]}</h3>`);
+    titleDiv.append(title);
+
     let imgDiv = $("<div class='img-container'/>").css({"width": "80%", "height": "60%", "margin": "0 auto", "cursor": "pointer"});
     imgDiv.click(()=>{window.location = `${appLinks[appNum]}`});
     let img = $(`<img src='./screens/${screens[appNum]}'/>`).css({"max-width": "100%", "max-height": "100%"});
-
     imgDiv.append(img);
-    div.append(imgDiv);
     //imgDiv done
 
     let arrowDiv = $("<div class='arrow-container'/>").css({"width": "80%", "height": "30%", "margin": "5px auto", "display": "flex", "justify-content": "center"});
@@ -48,8 +58,7 @@ let createItem = (appNum) => {
     arrowDiv.append([arrow, arrowText]);
 
     let textDiv = $("<div class='text-container'/>").css({"width": "80%", "height": "30%", "margin": "0 auto", "display": "flex", "justify-content": "center"});
-    let description = $(`<p>${descriptions[appNum]}</p>`).css({"padding": "10px"});
-
+    let description = $(`<p>${descriptions[appNum]}</p>`).css({"padding": "10px", "margin": "0"});
     textDiv.append(description);
     //textDiv done
 
@@ -62,16 +71,13 @@ let createItem = (appNum) => {
     let techs = $(`<p>${technologies[appNum]}</p>`).css({"margin": "auto 10px"});
     techDiv.append(techs);
 
-    div.append(arrowDiv)
-    div.append(textDiv);
-    div.append(linksDiv);
-    div.append(techDiv);
+    div.append([titleDiv, imgDiv, arrowDiv, textDiv, linksDiv, techDiv]);
 
     rightCol.append(div);
     rightCol.append($('<hr>'));
 
 }
 
-screens.map((app, index)=>{
+titles.map((app, index)=>{
     createItem(index);
 });
